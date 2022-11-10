@@ -15,3 +15,5 @@ public class Archer extends Player {
         return 10;
     }
 }
+
+
