@@ -1,26 +1,27 @@
 package Abstrack;
 
 public abstract class Player {
+    private static final String MESSAGE_DEATH = "Died";
     private int healPoints = 5;
     int points;
     String name;
     protected String profession;
     String sex;
 
-    public Player(int healPoints, String sex) {
+     Player(int healPoints, String sex) {
         this.healPoints = healPoints;
         this.sex = sex;
     }
 
-    public int getHealPoints() {
+    protected int getHealPoints() {
         return healPoints;
     }
 
-    public void move() {
+    private void move() {
         System.out.println(getClass().getSimpleName() + " i`m moving");
     }
 
-    public String getSex() {
+    protected String getSex() {
         return sex;
     }
 
@@ -30,12 +31,11 @@ public abstract class Player {
     protected abstract int getHitPower();
 
     public void hit(Player player) {
-        System.out.println(getClass().getSimpleName() +
+        printMessage(getClass().getSimpleName() +
                 " Hit " + player.getClass().getSimpleName() + " " + getHitPower());
         if (isPlayerKilled(healPoints, player.getHitPower())) {
-            System.out.println(player.getClass().getSimpleName() + " Killed ");
+            printMessage(player.getClass().getSimpleName() + " Killed ");
         }
-
     }
 
     private boolean isPlayerKilled(int healPoints, int hitPower) {
@@ -45,5 +45,7 @@ public abstract class Player {
             return false;
         }
     }
-
+    public static void printMessage(String message) {
+        System.out.println(message);}
 }
+
