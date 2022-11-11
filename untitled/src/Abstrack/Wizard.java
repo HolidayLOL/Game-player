@@ -3,7 +3,7 @@ package Abstrack;
 public class Wizard extends Player{
     public Wizard(int healPoints, String sex) {
         super(healPoints, sex);
-        System.out.println(profession);
+        printMessage(profession);
     }
 
     @Override
