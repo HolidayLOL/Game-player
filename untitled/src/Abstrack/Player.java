@@ -1,10 +1,12 @@
 package Abstrack;
 
 public abstract class Player {
-    private static final String MESSAGE_DEATH = "Died";
-    private int healPoints = 5;
+    private static final String MESSAGE_DEATH = "Died ";
+    private static final String HERO_WARRIOR = "Warrior ";
+    private static final String HERO_ARCHER = "Archer ";
+    private static final String GERO_WIZARD = "Wizard ";
+    private int healPoints;
     int points;
-    String name;
     protected String profession;
     String sex;
 
@@ -25,7 +27,6 @@ public abstract class Player {
         return sex;
     }
 
-    //    public abstract void speak ();
     protected abstract String getSpeech();
 
     protected abstract int getHitPower();
